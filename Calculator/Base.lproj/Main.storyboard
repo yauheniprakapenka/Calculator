@@ -382,7 +382,7 @@
                                             <color key="titleColor" red="0.94903248549999997" green="0.94899672270000002" blue="0.94902092220000001" alpha="0.69038955479452058" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="removeButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HhD-mk-EJW"/>
+                                            <action selector="removeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HhD-mk-EJW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-No-ejT">
@@ -542,12 +542,23 @@
                                     <constraint firstAttribute="width" constant="191" id="HOu-PG-9Sm"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jef-Ow-qTT">
+                                <rect key="frame" x="316" y="106" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FRy-YI-0sw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="sFM-Vk-9x9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.16078431372549018" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mIC-Ja-l4l" firstAttribute="top" secondItem="JoI-xe-ezK" secondAttribute="bottom" constant="-201" id="6xd-X3-qlf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jef-Ow-qTT" secondAttribute="trailing" constant="17" id="7PT-Vf-2k4"/>
                             <constraint firstItem="GRb-QR-nfx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C9R-OF-jzO"/>
                             <constraint firstItem="mIC-Ja-l4l" firstAttribute="top" secondItem="JoI-xe-ezK" secondAttribute="bottom" constant="-201" id="Epf-XW-NeT"/>
                             <constraint firstItem="GRb-QR-nfx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Ld9-s2-yzw"/>
@@ -565,6 +576,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JoI-xe-ezK" secondAttribute="trailing" id="m9p-oL-CMk"/>
                             <constraint firstItem="NIY-cw-rVH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qE3-Nr-5Di"/>
                             <constraint firstItem="NIY-cw-rVH" firstAttribute="top" secondItem="mIC-Ja-l4l" secondAttribute="bottom" constant="-255" id="sEG-3b-DUg"/>
+                            <constraint firstItem="jef-Ow-qTT" firstAttribute="top" secondItem="GRb-QR-nfx" secondAttribute="bottom" constant="8" id="zdj-4h-Q9e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -574,6 +586,7 @@
                     <connections>
                         <outlet property="devideOnZeroImageView" destination="JoI-xe-ezK" id="bHi-IU-NQR"/>
                         <outlet property="displayLabel" destination="GRb-QR-nfx" id="BVD-YG-1Eh"/>
+                        <outlet property="validationLabel" destination="jef-Ow-qTT" id="3PG-kk-cPw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -583,7 +596,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="414" y="-32"/>
+            <point key="canvasLocation" x="413.60000000000002" y="-32.833583208395808"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="USC-0j-QOK">
