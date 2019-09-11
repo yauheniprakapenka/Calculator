@@ -24,13 +24,24 @@ class CalculatorViewController: UIViewController {
         return .lightContent
     }
     
-    //var brain: CalculatorBrain = CalculatorBrain()
-    
     @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var validationLabel: UILabel!
     @IBOutlet weak var devideOnZeroImageView: UIImageView!
     
     @IBAction func digitButtonDidTap(_ sender: UIButton) {
         showDisplayLable()
+        
+        if displayLabel.text!.count > 8  {
+            
+            self.validationLabel.text = "Невозможно ввести больше 9 цифр"
+            self.validationLabel.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            
+            _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { timer in
+                self.validationLabel.text = ""
+            })
+            
+            return
+        }
         
         if displayLabel.text!.contains("0") && displayLabel.text!.count == 1 {
             displayLabel.text = String(sender.tag) == "0" ? "0" : String(sender.tag)
@@ -84,11 +95,16 @@ class CalculatorViewController: UIViewController {
         operationDidTap = false
     }
     
-    @IBAction func removeButtonDidTap(_ sender: UIButton) {
+    @IBAction func removeButtonTapped(_ sender: UIButton) {
         guard displayLabel.text!.count > 1 else {
             displayLabel.text = "0"
             return
         }
+        
+        if displayLabel.text!.count < 10 {
+            self.validationLabel.text = ""
+        }
+        
         displayLabel.text?.removeLast()
     }
     
